@@ -26,6 +26,10 @@ class Custom_Email extends WC_Email {
 
         // Triggers for this email
 
+        add_action( 'custom_failed_email_notifation', array( $this, 'queue_notification' ) );
+
+        add_action( 'custom_cancelled_email_notifation', array( $this, 'queue_notification' ) );
+
         add_action( 'custom_processing_email_notifation', array( $this, 'queue_notification' ) );
 
         add_action( 'custom_pending_email_notification', array( $this, 'queue_notification' ) );
